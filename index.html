@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقعي الخاص بمادة التقنية الرقمية</title>
+
+  <!-- خط عربي احترافي -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', Arial, sans-serif;
+      font-size: 18px;
+      background: #f5f7fa;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background: linear-gradient(to left, #6f4e37, #7b5a47);
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f1c40f;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px;
+      gap: 30px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h2 {
+      font-size: 30px;
+      color: #1c2b39;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      color: #555;
+      line-height: 2;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .card img {
+      width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto 15px;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      color: #1c2b39;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      padding: 30px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .feature {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      font-size: 20px;
+      color: #1c2b39;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .page {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    button {
+      margin-top: 10px;
+      background: #0e3a5d;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #0b2d47;
+    }
+
+    ul {
+      font-size: 17px;
+      line-height: 2;
+      margin-right: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #1c2b39;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: 'Cairo', Arial, sans-serif;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #0e3a5d;
+      box-shadow: 0 0 5px rgba(14, 58, 93, 0.3);
+    }
+
+    .section-title {
+      font-size: 28px;
+      color: #1c2b39;
+      margin: 30px 40px 20px;
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 0 40px;
+      line-height: 2;
+      color: #555;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(to left, #6f4e37, #7b5a47);
+      color: #fff;
+      padding: 15px 20px;
+      font-weight: bold;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+
+    .footer-text {
+      flex: 1;
+      text-align: center;
+    }
+
+    .teacher-name {
+      font-weight: bold;
+      color: #f1c40f;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .hero-text {
+        width: 100%;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature {
+        width: 100%;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>ثانوية الحديثة الأهلية بينبع</h1>
+  <nav>
+    <a onclick="showPage('home')">الرئيسية</a>
+    <a onclick="showPage('about')">من أنا</a>
+    <a onclick="showPage('contact')">للتواصل معي</a>
+  </nav>
+</header>
+
+<!-- الصفحة الرئيسية -->
+<div id="home" class="page active">
+
+  <section class="hero">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/200" alt="شعار المدرسة">
+      <h3>موقع تعليمي متميز</h3>
+      <p>مرحباً بك في موقعي الشخصي</p>
+    </div>
+
+    <div class="hero-text">
+      <h2>مرحباً بكم في موقعي الشخصي 👋</h2>
+      <p>
+        أنا طالب في المرحلة الثانوية، أدرس في ثانوية الحديثة الأهلية بينبع، أتعلم برمجة المواقع باستخدام HTML و CSS و JavaScript.
+        هذا الموقع هو مشروع بسيط يعرض مهاراتي في البرمجة ويعكس تطوري في مجال التقنية.
+      </p>
+      <p>
+        أسعى دائماً إلى تطوير نفسي واكتساب مهارات جديدة تساعدني في المستقبل الجامعي والمهني.
+      </p>
+    </div>
+
+  </section>
+
+  <section class="features">
+
+    <div class="feature">
+      <h3>🎓 تعليم متميز</h3>
+      <p>برامج حديثة وفق المعايير العالمية</p>
+    </div>
+
+    <div class="feature">
+      <h3>💻 تقنية رقمية</h3>
+      <p>تعلم البرمجة وتطوير المواقع</p>
+    </div>
+
+    <div class="feature">
+      <h3>🌟 تطوير المهارات</h3>
+      <p>اكتساب مهارات جديدة ومفيدة</p>
+    </div>
+
+  </section>
+
+</div>
+
+<!-- صفحة من أنا -->
+<div id="about" class="page">
+
+  <div class="section-title">من أنا 👨‍🎓</div>
+
+  <div class="content">
+    <h3 style="color: #0e3a5d; margin-bottom: 15px;">معلومات عني:</h3>
+    
+    <ul>
+      <li><strong>الاسم:</strong> طالب متميز في المرحلة الثانوية</li>
+      <li><strong>المدرسة:</strong> ثانوية الحديثة الأهلية بينبع</li>
+      <li><strong>المجال:</strong> تقنية رقمية وتطوير المواقع</li>
+      <li><strong>المهارات:</strong> HTML, CSS, JavaScript</li>
+      <li><strong>الهدف:</strong> تطوير نفسي واكتساب مهارات تقنية حديثة</li>
+    </ul>
+
+    <h3 style="color: #0e3a5d; margin: 30px 0 15px;">رحلتي التعليمية:</h3>
+    <p>
+      بدأت رحلتي في تعلم البرمجة من خلال مادة التقنية الرقمية في المدرسة. اكتشفت شغفي بتطوير المواقع وقررت أن أوسع معارفي في هذا المجال.
+      أعمل على تطوير مشاريع مختلفة لتطبيق ما تعلمته وبناء محفظة احترافية (Portfolio).
+    </p>
+
+    <h3 style="color: #0e3a5d; margin: 30px 0 15px;">أهدافي المستقبلية:</h3>
+    <ul>
+      <li>إتقان لغات البرمجة المتقدمة</li>
+      <li>بناء مشاريع ويب احترافية</li>
+      <li>التخصص في تطوير تطبيقات الويب</li>
+      <li>المساهمة في مشاريع مفتوحة المصدر</li>
+      <li>العمل في شركات تقنية عالمية</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- صفحة التواصل -->
+<div id="contact" class="page">
+
+  <div class="section-title">للتواصل معي 📧</div>
+
+  <div class="contact-form">
+    <h3 style="color: #0e3a5d; margin-bottom: 20px;">أرسل لي رسالة</h3>
+    
+    <form onsubmit="submitForm(event)">
+      <div class="form-group">
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل">
+      </div>
+
+      <div class="form-group">
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" name="email" required placeholder="أدخل بريدك الإلكتروني">
+      </div>
+
+      <div class="form-group">
+        <label for="subject">الموضوع:</label>
+        <input type="text" id="subject" name="subject" required placeholder="موضوع الرسالة">
+      </div>
+
+      <div class="form-group">
+        <label for="message">الرسالة:</label>
+        <textarea id="message" name="message" required placeholder="اكتب رسالتك هنا..."></textarea>
+      </div>
+
+      <button type="submit">إرسال الرسالة</button>
+    </form>
+  </div>
+
+  <div class="content" style="margin-top: 40px;">
+    <h3 style="color: #0e3a5d; margin-bottom: 15px;">طرق التواصل الأخرى:</h3>
+    <ul>
+      <li><strong>البريد الإلكتروني:</strong> student@example.com</li>
+      <li><strong>رقم الهاتف:</strong> +966 5X XXX XXXX</li>
+      <li><strong>الموقع:</strong> ثانوية الحديثة الأهلية، بينبع</li>
+      <li><strong>ساعات العمل:</strong> السبت - الأربعاء من 8:00 إلى 3:00 مساءً</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- التذييل -->
+<footer>
+  <div class="footer-text">
+    <span>© 2026 - جميع الحقوق محفوظة</span>
+  </div>
+  <div class="footer-text">
+    <span>من إنشاء: <span class="teacher-name">طالب متميز</span></span>
+  </div>
+  <div class="footer-text">
+    <span>ثانوية الحديثة الأهلية - بينبع</span>
+  </div>
+</footer>
+
+<script>
+  function showPage(pageName) {
+    // إخفاء جميع الصفحات
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => {
+      page.classList.remove('active');
+    });
+
+    // عرض الصفحة المختارة
+    const selectedPage = document.getElementById(pageName);
+    if (selectedPage) {
+      selectedPage.classList.add('active');
+      window.scrollTo(0, 0);
+    }
+  }
+
+  function submitForm(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    if (name && email && subject && message) {
+      alert(`شكراً لتواصلك معي ${name}!\nسيتم الرد عليك قريباً على البريد: ${email}`);
+      
+      // مسح النموذج
+      document.querySelector('form').reset();
+    } else {
+      alert('يرجى ملء جميع الحقول المطلوبة');
+    }
+  }
+</script>
+
+</body>
+</html>
